@@ -12,7 +12,11 @@ module Enumerable
     my_each { |element| filtered_array.push(element) if yield(element) }
     filtered_array
   end
-  
+
+  def my_all?
+    my_each { |element| return false unless yield(element) }
+    true
+  end
 end
 
 class Array
