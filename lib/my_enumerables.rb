@@ -6,6 +6,13 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    filtered_array = []
+    my_each { |element| filtered_array.push(element) if yield(element) }
+    filtered_array
+  end
+  
 end
 
 class Array
