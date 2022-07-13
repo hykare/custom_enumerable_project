@@ -40,7 +40,11 @@ module Enumerable
     length
   end
 
-  
+  def my_map
+    result_array = []
+    my_each { |element| result_array.push(yield(element)) }
+    result_array
+  end
 end
 
 class Array
