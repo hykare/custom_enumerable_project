@@ -22,6 +22,12 @@ module Enumerable
     my_each { |element| return true if yield(element) }
     false
   end
+
+  def my_none?
+    my_each { |element| return false if yield(element) }
+    true
+  end
+
 end
 
 class Array
