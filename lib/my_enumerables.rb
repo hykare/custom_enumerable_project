@@ -45,6 +45,13 @@ module Enumerable
     my_each { |element| result_array.push(yield(element)) }
     result_array
   end
+
+  def my_inject(memo = self[0])
+    my_each do |element|
+      memo = yield(memo, element)
+    end
+    memo
+  end
 end
 
 class Array
