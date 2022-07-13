@@ -28,6 +28,19 @@ module Enumerable
     true
   end
 
+  def my_count
+    if block_given?
+      count = 0
+      my_each do |element|
+        count += 1 if yield(element)
+      end
+      return count
+    end
+
+    length
+  end
+
+  
 end
 
 class Array
